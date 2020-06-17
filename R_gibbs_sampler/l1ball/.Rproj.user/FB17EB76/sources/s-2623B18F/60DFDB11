@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591985182397.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3478377760",
+    "id" : "60DFDB11",
+    "lastKnownWriteTime" : 1591984885,
+    "last_content_update" : 1591984885,
+    "path" : "~/git/l1ball_R/l1ball/man/l1ball.Rd",
+    "project_path" : "man/l1ball.Rd",
+    "properties" : {
+    },
+    "read_only" : true,
+    "read_only_alternatives" : [
+        "R/l1ball.R"
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_doc"
+}

@@ -1,0 +1,7 @@
+
+require("devtools")
+
+setwd("~/git/l1ball_R/l1ball/")
+
+
+devtools::build_manual(pkg = ".", path = '.')

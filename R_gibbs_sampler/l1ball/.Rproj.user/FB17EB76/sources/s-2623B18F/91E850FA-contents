@@ -1,0 +1,39 @@
+rm(list=ls())
+source("R/l1ball.R")
+n = 200
+p = 5000
+X <- matrix(rnorm(n*p),n,p)
+d =5
+w0 <- c(rep(0, p-d), rnorm(d)+5)
+y = X%*% w0 + rnorm(n,0,1)
+trace <- l1ball(y,X,b_w = 1.5,2000,1000,eps = 1E-8)
+
+plot(trace$trace_theta[1,])
+plot(trace$trace_theta[1000,])
+
+plot(colMeans(trace$trace_theta))
+
+
+ts.plot(trace$trace_slab[,100])
+# ts.plot(trace$trace_theta[,101])
+#
+# X2 = t(X) %*% X
+# Xy = t(X) %*% y
+# theta = solve(X2+diag(p), Xy)
+# plot(theta)
+
+
+
+require("horseshoe")
+
+hs_fit =horseshoe(y,X, method.tau="halfCauchy",  method.sigma="Jeffreys",
+                  burn = 1000, nmc = 2000)
+
+hs_fit$Sigma2Hat
+
+plot(hs_fit$BetaHat)
+
+
+dim(hs_fit$BetaSamples)
+
+plot(hs_fit$BetaSamples[,500])
